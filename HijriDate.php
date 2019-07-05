@@ -28,8 +28,12 @@ class HijriDate extends \yii\base\Widget
         $this->hijri = $this->GregorianToHijri($time);
     }
 
-    public function get_date($space = false){
-        return $this->hijri[1] . ' ' . $this->get_month_name($this->hijri[0]) . ' ' . $this->hijri[2] . (($space)?' ':'') .'H';
+    public function get_date($space = false, $zero = false){
+        $tglHijri = $this->hijri[1];
+        if($zero && $tglHijri<10)
+            $tglHijri = '0'.$tglHijri;
+
+        return $tglHijri . ' ' . $this->get_month_name($this->hijri[0]) . ' ' . $this->hijri[2] . (($space)?' ':'') .'H';
     }
 
     public function get_day(){
