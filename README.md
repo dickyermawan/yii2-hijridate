@@ -39,3 +39,5 @@ echo $hd->get_date(true); //2 Dzul Qa'dah 1440 H
 $hd = new HijriDate('2019-06-05'); //for custom date
 echo $hd->get_date(); // 1 Syawwal 1440H
 echo $hd->get_date(true); //1 Syawwal 1440 H
+
+echo $hd->get_date(true, true); //01 Syawwal 1440 H
